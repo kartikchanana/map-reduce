@@ -1,6 +1,6 @@
-#PageRank in MapReduce
+# PageRank in MapReduce
 
-###Requirements
+### Requirements
 We are going to apply PageRank to Wikipedia articles in order to find the most
 referenced ones. In practice this requires several non-trivial pre-processing steps. For example, the
 Wikipedia dumps might be compressed in a format not (well-) supported by Hadoop. In principle it is
@@ -9,7 +9,7 @@ links are not interesting, an understanding of the domain document schema is nec
 significant amount of time. Dealing with such obstacles is part of the real data analysis experience, therefore
 We transformed the original Wikipedia 2006 data dump into Hadoop-friendly bz2-compressed file.
 
-####.bz2 File Format
+#### .bz2 File Format
 The bz2 compression format works well for parallel computation, because it reduces size while
 remaining “splittable”, meaning that it can be processed in chunks in parallel like uncompressed data.
 Other compression formats such as zip require centralized decompression. Each line of the bz2 file is
@@ -23,7 +23,7 @@ For example:
 <page-namen>:<wikipedia file html contentsn>
 ```
 
-####Wikipedia HTML Format
+#### Wikipedia HTML Format
 You need to convert the Wikipedia data into an adjacency-list based graph representation, using the
 original page names as the node IDs. The distracting nuisance components (e.g., file path prefix and
 .html suffix) must be removed. The Wikipedia files are in XHTML so they may be parsed by either an
@@ -51,7 +51,7 @@ implementation that filters and keeps relevant links from a Wikipedia page, per 
 The parser should work fine, but is not guaranteed to be 100% correct. Check its output on some
 carefully selected examples to see if it performs satisfactorily. 
 
-####Pre-Processing Summary
+#### Pre-Processing Summary
 Brief discussion of pre-processing steps:
 1. Build a standalone program to parse input files and display them in human-readable form
 (optional but strongly recommended).
@@ -59,7 +59,7 @@ Brief discussion of pre-processing steps:
 3. Discard pages with names containing ~ as well as links containing these characters.
 4. Incorporate the remaining pages and links to create a graph in adjacency list representation.
 
-####Overall Workflow Summary
+#### Overall Workflow Summary
 Design all steps of the workflow as MapReduce jobs that are executed in sequence from a single driver
 program:
 1. Pre-processing Job: As stated above, turn input Wikipedia data into a graph represented as

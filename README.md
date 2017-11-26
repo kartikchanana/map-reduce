@@ -1,4 +1,4 @@
-##List of Solutions
+## List of Solutions
 
 1. Analyze Data with Sequential and Concurrent Java Programs
 2. Climate Analysis in MapReduce

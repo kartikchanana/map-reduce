@@ -1,6 +1,6 @@
-##Climate Analysis in MapReduce
+## Climate Analysis in MapReduce
 
-####Requirements
+#### Requirements
 1. Task 1: Write three MapReduce programs that calculate the mean minimum
 temperature and the mean maximum temperature, by station, for a single year of data.
 

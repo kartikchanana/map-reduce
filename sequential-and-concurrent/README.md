@@ -1,6 +1,6 @@
-##Analyze Data with Sequential and Concurrent Java Programs
+## Analyze Data with Sequential and Concurrent Java Programs
 
-####Requirements
+#### Requirements
 A. To eliminate the effect of I/O, create a 1-to-1 in-memory copy of the input file as follows: Write
 a loader routine that takes an input filename, reads the file, and returns a String[] or List<String>
 containing the lines of the file. Do not change the content or order of the lines in any way. This

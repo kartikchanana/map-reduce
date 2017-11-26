@@ -1,6 +1,6 @@
-#Climate Analysis in MapReduce using Secondary Sort
+# Climate Analysis in MapReduce using Secondary Sort
 
-###Requirements
+### Requirements
 1. Create time series of temperature data. Using 10 years of input data
 (1880.csv to 1889.csv), calculate mean minimum temperature and mean maximum
 temperature, by station, by year. 
